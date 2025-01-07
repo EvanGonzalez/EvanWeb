@@ -2,43 +2,47 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Evan González</title>
-    <link rel="stylesheet" href="css/estiloGlobal.css">
-    <link rel="stylesheet" href="./css/menu.css">
-    <link rel="shortcut icon" href="img/3_icon-black.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<meta charset="UTF-8">
+	<title>Evan González</title>
+	<link rel="stylesheet" href="./css/estiloGlobal.css">
+	<link rel="stylesheet" href="./css/menu.css">
+	<link rel="stylesheet" href="./css/img.css">
+	<link rel="shortcut icon" href="img/3_icon-black.svg" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 </head>
 
 <body class="holy-grail">
 
-		<header>
-			
-            <?php 
-            include ("./menu_footer/menu.html");
-            ?>
-		</header>
+	<header>
 
-		<div class="holy-grail-body">
+		<?php
+		include("./menu_footer/menu.html");
+		?>
+	</header>
 
-			<section class="holy-grail-content">
-				<p>Main Content</p>
-			</section>
+	<div class="holy-grail-body">
 
-			<div class="holy-grail-sidebar-1 hg-sidebar">
-				<p>Sidebar 1</p>
+		<section class="holy-grail-content">
+			<!-- banner -->
+			<!-- banner -->
+			<div class="banner">
+				<span class="background"></span>
+				
 			</div>
 
-			<div class="holy-grail-sidebar-2 hg-sidebar">
-				<p>Sidebar 2</p>
-			</div>
 
-		</div>
+			<!-- banner -->
+		</section>
 
-		<footer>
-			<p>Footer</p>
-		</footer>
-	</body>
+
+
+	</div>
+
+	<footer>
+		<p>s2ss</p>
+	</footer>
+	<script src="./js/img.js"></script>
+</body>
 
 </html>
