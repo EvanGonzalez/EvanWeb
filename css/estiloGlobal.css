@@ -16,7 +16,8 @@ body {
   padding: 20px;
 }
 
-.holy-grail header {
+.holy-grail header,
+.holy-grail footer {
   background-image: linear-gradient(90deg, rgb(43, 77, 130), rgb(51, 194, 209));
 }
 

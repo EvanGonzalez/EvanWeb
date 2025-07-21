@@ -2,15 +2,16 @@
     <nav>
         <div class="wrapper">
             <div class="logo">
-                <img src="./img/1_basic-white-blue-no-slogan.svg" alt="Logo de mi página" class="logo-img">
-              </div>
-              
+                <img src="/" alt="Logo de mi página" class="logo-img">
+
+            </div>
+
             <input type="radio" name="slider" id="menu-btn">
             <input type="radio" name="slider" id="close-btn">
             <ul class="nav-links">
                 <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="/resource/blog.php">Acerca de</a></li>
+                <li><a href="../index.php">Inicioo</a></li>
+                <li><a href="./pages/blog.php">Acerca de</a></li>
                 <li>
                     <a href="#" class="desktop-item">Proyectos</a>
                     <input type="checkbox" id="showDrop">
