@@ -1,31 +1,37 @@
 * {
   box-sizing: border-box;
 }
-
+dl, ol, ul {
+  margin-bottom: 0;  /* o lo que tú necesites */
+}
 html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-size: 1.1em;
   text-align: center;
   color: #f2eee3;
+  font-family: 'Roboto', sans-serif;
 }
 
 .holy-grail header,
-.holy-grail footer {
+.holy-grail footer,
+.hg-sidebar,
+.holy-grail-content {
   padding: 20px;
 }
 
 .holy-grail header,
 .holy-grail footer {
-  background-image: linear-gradient(90deg, rgb(43, 77, 130), rgb(51, 194, 209));
+background-image: linear-gradient(to top, #000000, #000000, #000000, #000000, #000000, #060606, #0b0b0b, #101010, #181818, #1e1e1e, #252525, #2c2c2c);
 }
 
 .hg-sidebar {
-  background: #fffffffc;
+  background: rgb(255, 255, 255);
 }
 
-.holy-grail-content {
+.holy-grail-content, .holy-grail-content2 {
   color: #000000;
 }
 
@@ -40,7 +46,7 @@ body {
   flex-direction: column;
 }
 
-.holy-grail-content {
+.holy-grail-content, .holy-grail-content2 {
   flex: 1 1 auto;
 }
 
@@ -54,6 +60,6 @@ body {
   }
 
   .hg-sidebar {
-    flex: 0 0 16px;
+    flex: 0 0 260px;
   }
 }

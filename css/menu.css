@@ -1,16 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: montserrat;
-}
+
 nav {
     position :relative;
     z-index: 99;
     width: 100%;
-    backdrop-filter: blur(30px);
-    box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
-    border: 2px solid rgb(255, 255, 255,0.18);
+    
+    /* box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+    border: 2px solid rgb(255, 255, 255,0.18); */
 
 }
 nav .wrapper {
@@ -32,6 +27,7 @@ nav .wrapper {
 .nav-links li {
     list-style: none;
 }
+
 .nav-links li a {
     color: #ffffff;
     text-decoration: none;
