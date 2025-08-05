@@ -1,35 +1,48 @@
 <body>
-    <nav>
-        <div class="wrapper">
-            <div class="logo">
-                <img src="/assets/img/soloNamewhite.svg" alt="Logo de mi página" class="logo-img">
 
+<nav class="custom-navbar">
+    <div class="nav-container">
+        <a href="../index.php" class="logo">
+            <img src="/assets/img/soloNamewhite.svg" alt="Logo" class="logo-img" />
+        </a>
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fas fa-bars icon-open"></i>
+            <i class="fas fa-times icon-close"></i>
+        </label>
+
+        <div class="nav-sidebar">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="./pages/blog.php">Acerca de</a></li>
+                    <li class="custom-dropdown">
+                        <input type="checkbox" id="drop-toggle" />
+                        <label for="drop-toggle" class="custom-drop-label">
+                            Proyectos <i class="fas fa-caret-down"></i>
+                        </label>
+                        <ul class="custom-dropdown-menu">
+                            <li><a href="#">Drop menu 1</a></li>
+                            <li><a href="#">Drop menu 2</a></li>
+                            <li><a href="#">Drop menu 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+
+                <div class="nav-buttons">
+                    <a href="/login.php" class="custom-btn login">Iniciar sesión</a>
+                    <a href="/registro.php" class="custom-btn register">Registrarse</a>
+                </div>
             </div>
-
-            <input type="radio" name="slider" id="menu-btn">
-            <input type="radio" name="slider" id="close-btn">
-            <ul class="nav-links menuBar">
-                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                <li><a href="../index.php">Inicio</a></li>
-                <li><a href="./pages/blog.php">Acerca de</a></li>
-                <li>
-                    <a href="#" class="desktop-item">Proyectos</a>
-                    <input type="checkbox" id="showDrop">
-                    <label for="showDrop" class="mobile-item">Proyectos</label>
-                    <ul class="drop-menu">
-                        <li><a href="#">Drop menu 1</a></li>
-                        <li><a href="#">Drop menu 2</a></li>
-                        <li><a href="#">Drop menu 3</a></li>
-                        <li><a href="#">Drop menu 4</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
         </div>
-    </nav>
+        <div class="nav-overlay"></div>
+    </div>
+</nav>
+
+
 
 
 </body>
-
 </html>

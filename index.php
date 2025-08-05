@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="./css/img.css">
 	<link rel="shortcut icon" href="/assets/img/3_icon-black.svg" />
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 </head>
 
@@ -27,10 +29,15 @@
 		include("./components/carrusel.php");
 		?>
 		<!-- banner -->
+
+
+
 	</section>
 	<div class="holy-grail-body">
 
 		<section class="holy-grail-content">
+
+
 			<!-- contCenter -->
 			<?php
 			include(__DIR__ . "/infoWeb/inicio.html");
@@ -51,6 +58,7 @@
 		<p>Evan'ms 2025</p>
 	</footer>
 	<script src="./js/img.js"></script>
+	<script src="./js/menu.js"></script>
 	<script src="./js/bootstrap.js"></script>
 </body>
 
