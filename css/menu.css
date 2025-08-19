@@ -1,6 +1,6 @@
 
 :root {
-  --bg-primary: #1e1e2f;
+  --bg-primary: #000000;
   --bg-secondary: #29293d;
   --text-primary: #ffffff;
   --text-secondary: #c0c0d0;
@@ -191,7 +191,7 @@
 .custom-navbar #menu-toggle:checked + .menu-icon .icon-open { display: none; }
 .custom-navbar #menu-toggle:checked + .menu-icon .icon-close { display: block; }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .custom-navbar .menu-icon {
     display: block;
   }
@@ -289,5 +289,35 @@
 
   .custom-navbar .custom-dropdown:hover .custom-drop-label .fa-caret-down {
     transform: rotate(180deg);
+  }
+}
+
+/* Mejorar tamaño y espaciado en móvil/tablet (<= 992px) */
+@media (max-width: 992px) {
+  /* Aumentar tamaño base de fuente para todo el navbar */
+  .custom-navbar {
+    font-size: 1.15rem; /* un poco más grande que el default */
+  }
+
+  /* Enlaces de navegación más grandes y con mejor padding */
+  .custom-navbar .nav-links li a {
+    font-size: 1.25rem;
+    padding: 0.9rem 0;
+  }
+
+  /* Botones más grandes y con mayor área táctil */
+  .custom-navbar .custom-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
+
+  /* Más espacio entre enlaces para mejor toque */
+  .custom-navbar .nav-links {
+    gap: 3rem;
+  }
+
+  /* Aumentar altura del menú hamburguesa para que sea más fácil tocar */
+  .custom-navbar .menu-icon {
+    font-size: 2rem;
   }
 }

@@ -1,0 +1,117 @@
+create database evanmsdata
+-- Tabla para los administradores (debes insertar los datos manualmente aquí)
+CREATE TABLE administradores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_completo VARCHAR(150) NOT NULL,
+    nombre_usuario VARCHAR(50) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL -- Almacena la contraseña hasheada
+);
+
+
+--tabla cliente
+-- Tabla para los clientes
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_completo VARCHAR(150) NOT NULL,
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL, -- Cambiado a 'contrasena' para consistencia y longitud para hash
+    telefono VARCHAR(20),
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+INSERT INTO administradores (nombre_usuario, contrasena, nombre_completo)
+VALUES ('evan', '$2y$10$P8GkKq5Op0X9hK7ap8FZyeF0sYXK7nyNEO5s.QoxExC4mOHq5XzE.', 'Administrador General');
+-- La contraseña "123456" está encriptada con bcrypt
+
+
+
+
+
+-- Tabla para anuncios del administrador
+CREATE TABLE anuncios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(200) NOT NULL,
+    contenido TEXT NOT NULL,
+    tipo ENUM('informativo', 'promocion', 'mantenimiento', 'urgente') DEFAULT 'informativo',
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    fecha_expiracion DATE NULL,
+    activo BOOLEAN DEFAULT TRUE,
+    admin_id INT,
+    FOREIGN KEY (admin_id) REFERENCES administradores(id) ON DELETE SET NULL
+);
+
+-- Tabla para solicitudes de servicio
+CREATE TABLE solicitudes_servicio (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    tipo_servicio ENUM('reparacion', 'mantenimiento', 'instalacion', 'consultoria', 'otro') NOT NULL,
+    titulo VARCHAR(200) NOT NULL,
+    descripcion TEXT NOT NULL,
+    prioridad ENUM('baja', 'media', 'alta', 'urgente') DEFAULT 'media',
+    estado ENUM('pendiente', 'en_revision', 'aprobada', 'en_proceso', 'completada', 'cancelada') DEFAULT 'pendiente',
+    fecha_solicitud DATETIME DEFAULT CURRENT_TIMESTAMP,
+    fecha_respuesta DATETIME NULL,
+    fecha_completado DATETIME NULL,
+    costo_estimado DECIMAL(10,2) NULL,
+    notas_admin TEXT NULL,
+    direccion_servicio VARCHAR(300) NULL,
+    telefono_contacto VARCHAR(20) NULL,
+    fecha_preferida DATE NULL,
+    hora_preferida TIME NULL,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
+);
+
+-- Tabla para archivos adjuntos de solicitudes
+CREATE TABLE solicitud_archivos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    solicitud_id INT NOT NULL,
+    nombre_original VARCHAR(255) NOT NULL,
+    nombre_archivo VARCHAR(255) NOT NULL,
+    tipo_archivo VARCHAR(100) NOT NULL,
+    tamano_archivo INT NOT NULL,
+    ruta_archivo VARCHAR(500) NOT NULL,
+    fecha_subida DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (solicitud_id) REFERENCES solicitudes_servicio(id) ON DELETE CASCADE
+);
+
+-- Tabla para el seguimiento/historial de solicitudes
+CREATE TABLE solicitud_historial (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    solicitud_id INT NOT NULL,
+    estado_anterior ENUM('pendiente', 'en_revision', 'aprobada', 'en_proceso', 'completada', 'cancelada'),
+    estado_nuevo ENUM('pendiente', 'en_revision', 'aprobada', 'en_proceso', 'completada', 'cancelada'),
+    comentario TEXT,
+    cambiado_por_admin BOOLEAN DEFAULT FALSE,
+    admin_id INT NULL,
+    fecha_cambio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (solicitud_id) REFERENCES solicitudes_servicio(id) ON DELETE CASCADE,
+    FOREIGN KEY (admin_id) REFERENCES administradores(id) ON DELETE SET NULL
+);
+
+-- Tabla para notificaciones del cliente
+CREATE TABLE notificaciones_cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    titulo VARCHAR(200) NOT NULL,
+    mensaje TEXT NOT NULL,
+    tipo ENUM('info', 'actualizacion', 'completado', 'urgente') DEFAULT 'info',
+    leida BOOLEAN DEFAULT FALSE,
+    solicitud_id INT NULL,
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE,
+    FOREIGN KEY (solicitud_id) REFERENCES solicitudes_servicio(id) ON DELETE CASCADE
+);
+
+-- Insertar algunos anuncios de ejemplo
+INSERT INTO anuncios (titulo, contenido, tipo, fecha_expiracion) VALUES 
+('¡Bienvenido a ServicioTech!', 'Ofrecemos servicios de mantenimiento y reparación de equipos tecnológicos con la mejor calidad y garantía.', 'informativo', '2025-12-31'),
+('Promoción Mantenimiento Preventivo', '20% de descuento en servicios de mantenimiento preventivo durante este mes. ¡Mantén tus equipos en óptimo estado!', 'promocion', '2025-09-30'),
+('Horarios de Atención', 'Nuestros horarios de atención son de Lunes a Viernes de 8:00 AM a 6:00 PM, y Sábados de 9:00 AM a 2:00 PM.', 'informativo', NULL);
+
+-- Insertar algunas notificaciones de ejemplo (reemplaza cliente_id con un ID válido)
+-- INSERT INTO notificaciones_cliente (cliente_id, titulo, mensaje, tipo) VALUES 
+-- (1, 'Bienvenido al sistema', 'Tu cuenta ha sido creada exitosamente. Ya puedes solicitar nuestros servicios.', 'info'),
+-- (1, 'Servicios disponibles', 'Revisa nuestros servicios de reparación, mantenimiento e instalación de equipos.', 'info');

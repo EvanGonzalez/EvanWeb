@@ -3,12 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Evan González</title>
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/estiloGlobal.css">
 	<link rel="stylesheet" href="./css/menu.css">
 	<link rel="stylesheet" href="./css/img.css">
-	<link rel="shortcut icon" href="/assets/img/3_icon-black.svg" />
+	<link rel="stylesheet" href="./css/footer.css">
+	<link rel="shortcut icon" href="./assets/img/logoofical.png" />
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -55,7 +57,9 @@
 	</div>
 
 	<footer>
-		<p>Evan'ms 2025</p>
+		<?php
+		include("./components/footer.php");
+		?>
 	</footer>
 	<script src="./js/img.js"></script>
 	<script src="./js/menu.js"></script>

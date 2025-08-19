@@ -3,7 +3,7 @@
 <nav class="custom-navbar">
     <div class="nav-container">
         <a href="../index.php" class="logo">
-            <img src="/assets/img/soloNamewhite.svg" alt="Logo" class="logo-img" />
+            <img src="./assets/img/soloNamewhite.svg" alt="Logo" class="logo-img" />
         </a>
 
         <input type="checkbox" id="menu-toggle" />
@@ -32,8 +32,8 @@
                 </ul>
 
                 <div class="nav-buttons">
-                    <a href="/login.php" class="custom-btn login">Iniciar sesión</a>
-                    <a href="/registro.php" class="custom-btn register">Registrarse</a>
+                    <a href="./login.php" class="custom-btn login">Iniciar sesión</a>
+                    
                 </div>
             </div>
         </div>

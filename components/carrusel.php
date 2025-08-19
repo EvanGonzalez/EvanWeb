@@ -1,10 +1,10 @@
-<div id="carouselExampleFade" class="carousel slide carousel-fade custom-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+<div id="carouselExampleFade" class="carousel slide carousel-fade custom-carousel" data-bs-ride="carousel" data-bs-interval="6000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/assets/img/banner.png" class="d-block w-100" alt="...">
+      <img src="./assets/img/banner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="/assets/img/banner2.png" class="d-block w-100" alt="...">
+      <img src="./assets/img/banner2.png" class="d-block w-100" alt="...">
       <button type="button" class="btn btn-primary btn-sm btn-custom">Small button</button>
     </div>
     

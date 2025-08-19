@@ -17,14 +17,13 @@ body {
 
 .holy-grail header,
 .holy-grail footer,
-.hg-sidebar,
 .holy-grail-content {
   padding: 20px;
 }
 
 .holy-grail header,
 .holy-grail footer {
-background-image: linear-gradient(to top, #000000, #000000, #000000, #000000, #000000, #060606, #0b0b0b, #101010, #181818, #1e1e1e, #252525, #2c2c2c);
+background-color: #000000;
 }
 
 .hg-sidebar {
@@ -58,8 +57,8 @@ background-image: linear-gradient(to top, #000000, #000000, #000000, #000000, #0
   .holy-grail-body {
     flex-direction: row;
   }
-
   .hg-sidebar {
     flex: 0 0 260px;
   }
+  
 }
